@@ -1,12 +1,9 @@
 import state from "./state";
 import { completeSearch } from "./search";
 import { createGenericElt, createLinkElt, normalizeText } from "./utils";
-
 import { createAllLabels } from "./labels";
 
-/**
- * DOM Variables
- */
+// DOM Variables 
 const overlayElt = document.getElementById("overlay");
 const ingFiltersListElt = document.getElementById("ing-filter-list");
 const appFiltersListElt = document.getElementById("app-filter-list");
@@ -17,7 +14,6 @@ const ustBtnElt = document.getElementById("ust-btn");
 const ingInputElt = document.getElementById("ing-input");
 const appInputElt = document.getElementById("app-input");
 const ustInputElt = document.getElementById("ust-input");
-
 
 /*Créer un élément filtrant :
  @param   {string} type ing, app or ust
@@ -31,8 +27,6 @@ const createFilterElt = (type, name) => {
 
   return liElt;
 };
-
-
 
 /*Ajouter un filtre au Click
  @param   {string}    type  ing, app or ust
@@ -61,6 +55,7 @@ const addFilter = (type, name) => {
     completeSearch();
   };
 };
+
 /*Créer un élément de liste avec tous les filtres d'un type
  @param   {array} list : liste des filtres à afficher
  @return  {node}*/
@@ -72,7 +67,7 @@ const createFiltersList = (listElt, list) => {
   });
 };
 
-/*Remplit la liste des filtres avec les données de l'état
+/*Remplit la liste des filtres avec les données de l'élément
   @returns {void}*/
 const fillAllFilterLists = () => {
   createFiltersList(ingFiltersListElt, state.displayedIng);
@@ -130,7 +125,7 @@ const closeAllFilterLists = () => {
   resetTagsDisplay();
 };
 
-/*Augmenter le filtre d'entrée
+/*Agrandir le filtre d'entrée
   @param   {object}   evt  Browser event
   @return  {void}*/
 const scaleFilterUp = (evt) => {
@@ -160,7 +155,7 @@ const scaleAllFiltersDown = () => {
   filtersElts.forEach((elt) => elt.classList.remove("scaled"));
 };
 
-/*Ferme tous les filtres et les réduit
+/*Ferme et réduit tous les filtres  
  @return  {void}*/
 const putFiltersToInitialState = () => {
   closeAllFilterLists();

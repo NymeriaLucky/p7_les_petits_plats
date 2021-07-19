@@ -17,6 +17,7 @@ import {
   removeRecipeById,
   createAllRecipes,
 } from "./recipes";
+
 /* Gérer les conditions de recherche algo
  @param {object} événement de navigateur evt
    @returns {void}*/
@@ -73,6 +74,7 @@ const searchByInput = () => {
     mainContentElt.innerHTML = "";
   }
 };
+
 /*Rechercher des recettes à partir de filtres
   @returns {void}*/
 const searchByTag = () => {

@@ -58,7 +58,7 @@ const createIngredient = (ingredient) => {
   return liElt;
 };
 
-/*Créez toutes les recettes et insérez-les dans le DOM
+/*Créer toutes les recettes et les insérer dans le DOM
  @returns {void}*/
 const createAllRecipes = () => {
   mainContentElt.innerHTML = "";

@@ -1,4 +1,4 @@
-/*Créer un dom element avec une class
+/*Créer un DOM element avec une classe
  @param   {string}  eltTag     :tag's name
  @param   {string}  eltClass   :tag's class
   @return  {node}*/
@@ -7,7 +7,7 @@ const createGenericElt = (eltTag, eltClass = null) => {
   if (eltClass) elt.className = eltClass;
   return elt;
 };
-/*Créer un element lien avec une class
+/*Créer un element lien avec une classe
   @param   {string}  eltHref     :lien
   @param   {string}  eltContent  :contenu à afficher
  @param   {string}  eltClass    :tag's class
