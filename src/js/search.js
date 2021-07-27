@@ -18,16 +18,18 @@ import {
   createAllRecipes,
 } from "./recipes";
 
-/* Gérer les conditions de recherche algo
- @param {object} événement de navigateur evt
-   @returns {void}*/
+/** Gérer les conditions de recherche algo
+ *@param {object} événement de navigateur evt
+ *@returns {void}
+ */
 const manageSearchInput = (evt) => {
   evt.preventDefault();
   state.currentSearch = evt.target.value;
   completeSearch();
 };
-/* Rechercher des recettes à partir de l'entrée de recherche
- @returns {void}*/
+/** Rechercher des recettes à partir de l'entrée de recherche
+ *@returns {void}
+ */
 const searchByInput = () => {
   const mainContentElt = document.getElementById("main-content");
   const value = state.currentSearch;
@@ -75,8 +77,9 @@ const searchByInput = () => {
   }
 };
 
-/*Rechercher des recettes à partir de filtres
-  @returns {void}*/
+/**Rechercher des recettes à partir de filtres
+*  @returns {void}
+*/
 const searchByTag = () => {
   const {
     ingLabels,
@@ -116,8 +119,9 @@ const searchByTag = () => {
   });
 };
 
-/*Afficher les filtres des recettes affichées
- @returns {void}*/
+/**Afficher les filtres des recettes affichées
+*@returns {void}
+*/
 const displayRemainingTags = () => {
   let recipesToConsider = [];
 
@@ -134,18 +138,20 @@ const displayRemainingTags = () => {
   clearAllFilters();
   recipesToConsider.forEach((recipe) => displayFiltersFromRecipes(recipe));
 };
-/*Afficher les filtres d'ingrédients inclus dans les recettes affichées
-  @param {object} recette la recette ajoutée
-  @returns {void}*/
+/**Afficher les filtres d'ingrédients inclus dans les recettes affichées
+* @param {object} recette la recette ajoutée
+* @returns {void}
+*/
 const displayFiltersFromRecipes = (recipe) => {
   displayIngredientsFromRecipe(recipe);
   displayAppliancesFromRecipe(recipe);
   displayUstensilsFromRecipe(recipe);
 };
 
-/*Afficher les filtres d'ingrédients inclus dans les recettes affichées
-  @param {object} recette la recette ajoutée
-  @returns {void}*/
+/**Afficher les filtres d'ingrédients inclus dans les recettes affichées
+*  @param {object} recette la recette ajoutée
+* @returns {void}
+*/
 const displayIngredientsFromRecipe = (recipe) => {
   const ingListElt = document.getElementById("ing-filter-list");
   const visibleIngFilters = getVisibleFilters("ing");
@@ -158,9 +164,10 @@ const displayIngredientsFromRecipe = (recipe) => {
   });
 };
 
-/*Afficher les filtres de l'appareil inclus dans les recettes affichées
- @param   {object} recipe : la recette ajoutée
- @returns {void}*/
+/**Afficher les filtres de l'appareil inclus dans les recettes affichées
+ *@param   {object} recipe : la recette ajoutée
+* @returns {void}
+*/
 const displayAppliancesFromRecipe = (recipe) => {
   const appListElt = document.getElementById("app-filter-list");
   const visibleAppFilters = getVisibleFilters("app");
@@ -171,9 +178,10 @@ const displayAppliancesFromRecipe = (recipe) => {
     );
 };
 
-/*Afficher les filtres à ustensiles inclus dans les recettes affichées
- @param {object} recette la recette ajoutée
-  @returns {void}*/
+/**Afficher les filtres à ustensiles inclus dans les recettes affichées
+* @param {object} recette :la recette ajoutée
+* @returns {void}
+*/
 const displayUstensilsFromRecipe = (recipe) => {
   const ustListElt = document.getElementById("ust-filter-list");
   const visibleUstFilters = getVisibleFilters("ust");
@@ -184,8 +192,9 @@ const displayUstensilsFromRecipe = (recipe) => {
   });
 };
 
-/*Afficher "aucun résultat" lorsqu'aucune recette n'est affichée
- @returns {void}*/
+/**Afficher "aucun résultat" lorsqu'aucune recette n'est affichée
+* @returns {void}
+*/
 const checkSearchResults = () => {
   const allRecipes = document.querySelectorAll("#main-content article");
   const mainContentElt = document.getElementById("result");
@@ -206,8 +215,9 @@ const checkSearchResults = () => {
   }
 };
 
-/*Toutes les étapes de la recherche
- @returns {void}*/
+/**Toutes les étapes de la recherche
+* @returns {void}
+*/
 const completeSearch = () => {
   searchByInput();
   searchByTag();

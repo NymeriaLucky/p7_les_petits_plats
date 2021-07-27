@@ -5,10 +5,11 @@ import { createGenericElt, normalizeText } from "./utils";
 //Dom Variables//
 const labelsElt = document.getElementById("labels");
 
-/*Crée un seul élément d'étiquette
- @param   {string}   type : ing, app or ust
- @param   {string}  nommer : le nom de l'étiquette
- @return  {node}*/
+/**Crée un seul élément d'étiquette
+* @param   {string}   type : ing, app or ust
+* @param   {string}  nommer : le nom de l'étiquette
+* @return  {node}
+*/
 const createLabel = (type, name) => {
   const elt = createGenericElt("button", `label ${type}`);
   elt.setAttribute("type", "button");
@@ -20,10 +21,11 @@ const createLabel = (type, name) => {
   return elt;
 };
 
-/*Créer toutes les étiquettes d'un type
- @param   {array}   labels Lister la liste des labels à créer
- @param   {string}  type  ing, app or ust
- @return  {node}*/
+/**Créer toutes les étiquettes d'un type
+* @param   {array}   labels Lister la liste des labels à créer
+* @param   {string}  type  ing, app or ust
+* @return  {node}
+*/
 const createLabels = (labelsList, type) => {
   const elt = document.createElement("div");
   labelsList.forEach((label) => {
@@ -33,8 +35,9 @@ const createLabels = (labelsList, type) => {
   return elt;
 };
 
-/*Créer les étiquettes(labels) de tous types
- @return  {void}*/
+/**Créer les étiquettes(labels) de tous types
+* @return  {void}
+*/
 const createAllLabels = () => {
   labelsElt.innerHTML = "";
   labelsElt.appendChild(createLabels(state.ingLabels, "ing"));
@@ -42,10 +45,11 @@ const createAllLabels = () => {
   labelsElt.appendChild(createLabels(state.ustLabels, "ust"));
 };
 
-/*Supprimer une étiquette
- @param   {string}  type  ing, app or ust
- @param   {string}  name  the label's name
- @return  {node}*/
+/**Supprimer une étiquette
+* @param   {string}  type  ing, app or ust
+* @param   {string}  name  the label's name
+* @return  {node}
+*/
 const removeFilter = (type, name) => {
   return function (evt) {
     evt.preventDefault();

@@ -2,22 +2,23 @@ import data from "./data";
 import state from "./state";
 import { normalizeText } from "./utils";
 
-/*Obtenir une liste de tous les identifiants de recettes
- @return {array} : la liste des identifiants.*/
+/**Obtenir une liste de tous les identifiants de recettes
+* @return {array} : la liste des identifiants.
+*/
  const getAllRecipeIds = () => {
   return data.recipes.map((elt) => elt.id);
 };
 
-/*
- Obtenir les données de recettes complètes à partir des identifiants
- @return  {array}: tableau*/
+/**Obtenir les données de recettes complètes à partir des identifiants
+* @return  {array}: tableau
+*/
  const getFullRecipesFromIds = (idsArray) => {
   return data.recipes.filter((recipe) => idsArray.includes(recipe.id));
 };
 
-/*
- Chercher et Obtenir une liste de tous les ingrédients de toutes les recettes
-  @return  {array}  : La liste des ingrédients.*/
+/**Chercher et Obtenir une liste de tous les ingrédients de toutes les recettes
+* @return  {array}  : La liste des ingrédients.
+*/
 const getAllIngredients = () => {
   let ingredients = [];
   data.recipes.forEach((recipe) => {
@@ -32,9 +33,10 @@ const getAllIngredients = () => {
   }));
 };
 
-/*Obtenir une seule chaîne avec tous les ingrédients d'une recette
- @param   {object}  : recette.
- @returns {string} : chaine d'ingrédients*/
+/**Obtenir une seule chaîne avec tous les ingrédients d'une recette
+* @param   {object}  : recette.
+* @returns {string} : chaine d'ingrédients
+*/
 const getIngredientsStringFromRecipe = (recipe) => {
   let ingredientsString = "";
   recipe.ingredients.forEach((ing) => {
@@ -43,9 +45,10 @@ const getIngredientsStringFromRecipe = (recipe) => {
   return ingredientsString;
 };
 
-/*Obtenir une liste de tous les ingrédients(objets) de toutes les recettes sous forme de tableau
-  @param   {array}  tagListe : le tableau des filtres.
-  @return  {object} : objet*/
+/**Obtenir une liste de tous les ingrédients(objets) de toutes les recettes sous forme de tableau
+*  @param   {array}  tagListe : le tableau des filtres.
+*  @return  {object} : objet
+*/
 const createTagObject = (tagList) => {
   let tagObj = {};
   tagList.forEach((tag) => (tagObj[normalizeText(tag.name)] = []));
@@ -53,8 +56,9 @@ const createTagObject = (tagList) => {
   return tagObj;
 };
 
-/*Obtenir un objet avec tous les noms d'ingrédients
- @return  {object} : objet*/
+/**Obtenir un objet avec tous les noms d'ingrédients
+* @return  {object} : objet
+*/
 const getIngredientsObject = () => {
   let ingredientsObject = createTagObject(getAllIngredients());
   data.recipes.forEach((recipe) => {
@@ -66,8 +70,9 @@ const getIngredientsObject = () => {
   return ingredientsObject;
 };
 
-/*Obtenir une liste de tous les ustensils de cuisine de toutes les recettes
- @return {array} : la liste sous forme de tableau*/
+/**Obtenir une liste de tous les ustensils de cuisine de toutes les recettes
+*@return {array} : la liste sous forme de tableau
+*/
  const getAllUstensils = () => {
   let ustensils = [];
   data.recipes.forEach((recipe) => {
@@ -82,8 +87,9 @@ const getIngredientsObject = () => {
   }));
 };
 
-/* Obtenir un objet avec tous les noms d'ustensils
- @return  {object}: objet*/
+/**Obtenir un objet avec tous les noms d'ustensils
+* @return  {object}: objet
+*/
  const getUstensilsObject = () => {
   let ustensilsObject = createTagObject(getAllUstensils());
 
@@ -97,8 +103,9 @@ const getIngredientsObject = () => {
   return ustensilsObject;
 };
 
-/*Obtenir un objet avec tous les noms d'appareils 
-  @return  {object} : objet*/
+/**Obtenir un objet avec tous les noms d'appareils 
+* @return  {object} : objet
+*/
 const getAppliancesObject = () => {
   let appliancesObject = createTagObject(getAllAppliances());
 
@@ -110,8 +117,9 @@ const getAppliancesObject = () => {
   return appliancesObject;
 };
 
-/*Obtenirune liste de tous les appareils ménagers de toutes les recettes
-  @return {array} la liste des appareils*/
+/**Obtenir une liste de tous les appareils ménagers de toutes les recettes
+*@return {array} la liste des appareils
+*/
   const getAllAppliances = () => {
     let appliances = [];
     data.recipes.forEach((recipe) => {
@@ -124,8 +132,9 @@ const getAppliancesObject = () => {
     }));
   };
 
-/*Initialiser l'état avec les données initiales
-  @returns : {void}*/
+/**Initialiser l'état avec les données initiales
+*@returns {void}
+*/
   const initializeState = () => {
     state.displayedIng = getAllIngredients();
     state.displayedApp = getAllAppliances();

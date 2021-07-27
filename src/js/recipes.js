@@ -4,9 +4,10 @@ import { createGenericElt, createLinkElt } from "./utils";
 //DOM Variables//
 const mainContentElt = document.getElementById("main-content");
 
-/*Créer un modèle de recette unique
- @param   {object}  recipe
- @return  {node} : l'élément créé*/
+/**Créer un modèle de recette unique
+* @param   {object}  recipe
+* @return  {node} : l'élément créé
+*/
 const createRecipeElement = (recipe) => {
   const elt = createGenericElt("article", "recipe");
   elt.id = recipe.id;
@@ -44,9 +45,10 @@ const createRecipeElement = (recipe) => {
   return elt;
 };
 
-/*Créer un seul ingrédient
- @param   {object}  ingredient
- @return  {node}    the created element*/
+/**Créer un seul ingrédient
+* @param   {object}  ingredient
+* @return  {node}    the created element
+*/
 const createIngredient = (ingredient) => {
   const liElt = document.createElement("li");
   liElt.innerHTML = `<strong>${ingredient.ingredient}`;
@@ -58,8 +60,9 @@ const createIngredient = (ingredient) => {
   return liElt;
 };
 
-/*Créer toutes les recettes et les insérer dans le DOM
- @returns {void}*/
+/**Créer toutes les recettes et les insérer dans le DOM
+* @returns {void}
+*/
 const createAllRecipes = () => {
   mainContentElt.innerHTML = "";
   data.recipes.forEach((recipe) => {
@@ -69,8 +72,9 @@ const createAllRecipes = () => {
   });
 };
 
-/*Afficher toutes les recettes dans le DOM
-  @returns {void}*/
+/**Afficher toutes les recettes dans le DOM
+*  @returns {void}
+*/
 const displayAllRecipes = () => {
   data.recipes.forEach((recipe) => {
     const recipeToDisplay = document.getElementById(recipe.id);
@@ -78,8 +82,9 @@ const displayAllRecipes = () => {
   });
 };
 
-/*Vérifiez si la recette est déjà dans le DOM et supprimez-la
- @returns {void}*/
+/**Vérifiez si la recette est déjà dans le DOM et supprimez-la
+* @returns {void}
+*/
 const removeRecipeById = (recipeId) => {
   if (document.getElementById(recipeId))
     document.getElementById(recipeId).remove();
