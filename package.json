@@ -1,5 +1,5 @@
 {
-  "name": "myriamgreder_7_19072021",
+  "name": "myriamgreder_7_29072021",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "watch": "webpack --watch",
     "lint": "eslint ."
   },
-  "author": "Myriam GREDER",
+  "author": "Myriam Greder",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",

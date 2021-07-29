@@ -1,9 +1,12 @@
 import state from "./state";
 import { completeSearch } from "./search";
 import { createGenericElt, createLinkElt, normalizeText } from "./utils";
+
 import { createAllLabels } from "./labels";
 
-// DOM Variables 
+/**
+ * DOM Variables
+ */
 const overlayElt = document.getElementById("overlay");
 const ingFiltersListElt = document.getElementById("ing-filter-list");
 const appFiltersListElt = document.getElementById("app-filter-list");
@@ -15,11 +18,12 @@ const ingInputElt = document.getElementById("ing-input");
 const appInputElt = document.getElementById("app-input");
 const ustInputElt = document.getElementById("ust-input");
 
-/**Créer un élément filtrant :
-* @param   {string} type ing, app or ust
-* @param   {string} nommer le contenu du filtre
-* @returns {node}
-*/
+/**
+ * Créer un élément filtrant 
+ * @param   {string} type ing, app or ust
+ * @param   {string} name the filter's content
+ * @returns {node}
+ */
 const createFilterElt = (type, name) => {
   const liElt = createGenericElt("li");
   const aElt = createLinkElt("/", name, "filter-tag");
@@ -29,11 +33,12 @@ const createFilterElt = (type, name) => {
   return liElt;
 };
 
-/**Ajouter un filtre au Click
-* @param   {string}    type  ing, app or ust
-* @param   {string}    name  the filter's name
-* @return  {void}
-*/
+/**
+ * Ajouter un filtre au Click
+ * @param   {string}    type  ing, app or ust
+ * @param   {string}    name  the filter's name
+ * @return  {void}
+ */
 const addFilter = (type, name) => {
   return function (evt) {
     evt.preventDefault();
@@ -57,10 +62,11 @@ const addFilter = (type, name) => {
   };
 };
 
-/**Créer un élément de liste avec tous les filtres d'un type
-* @param   {array} list : liste des filtres à afficher
-* @return  {node}
-*/
+/**
+ * Créer un élément de liste avec tous les filtres d'un type
+ * @param   {array} list  liste des filtres à afficher
+ * @return  {node}
+ */
 const createFiltersList = (listElt, list) => {
   listElt.innerHTML = "";
   list.forEach((elt) => {
@@ -69,18 +75,20 @@ const createFiltersList = (listElt, list) => {
   });
 };
 
-/**Remplit la liste des filtres avec les données de l'élément
-* @returns {void}
-*/
+/**
+ * Remplit la liste des filtres avec les données de l'élément
+ * @returns {void}
+ */
 const fillAllFilterLists = () => {
   createFiltersList(ingFiltersListElt, state.displayedIng);
   createFiltersList(appFiltersListElt, state.displayedApp);
   createFiltersList(ustFiltersListElt, state.displayedUst);
 };
 
-/**Affiche les filtres initiaux
-* @returns {void}
-*/
+/**
+ * Affiche les filtres initiaux
+ * @returns {void}
+ */
 const initializeFilters = () => {
   fillAllFilterLists();
   ingBtnElt.addEventListener("click", toggleFilterList);
@@ -97,10 +105,11 @@ const initializeFilters = () => {
   ustInputElt.addEventListener("input", manageCompletion);
 };
 
-/**Gérer les mouvements de la liste de filtres
-* @param   {object} :Événement de navigateur evt 
-* @return  {void}
-*/
+/**
+ * Gérer les mouvements de la liste de filtres
+ * @param   {object}   evt  Evenement de navigateur evt
+ * @return  {void}
+ */
 const toggleFilterList = (evt) => {
   evt.preventDefault();
   if (evt.target.tagName !== "SPAN") return;
@@ -109,13 +118,14 @@ const toggleFilterList = (evt) => {
     scaleFilterUp(evt);
   } else {
     closeAllFilterLists();
-    scaleAllFiltersDown(); //réduire tous les filtres
+    scaleAllFiltersDown();
   }
 };
 
-/**Fermer tous les filtres
-*@return  {void}
-*/
+/**
+ * Fermer tous les filtres
+ * @return  {void}
+ */
 const closeAllFilterLists = () => {
   overlayElt.style.display = "none";
 
@@ -131,10 +141,11 @@ const closeAllFilterLists = () => {
   resetTagsDisplay();
 };
 
-/**Agrandir le filtre d'entrée
-*  @param   {object}   evt  Browser event
-* @return  {void}
-*/
+/**
+ *Agrandir le filtre d'entrée
+ * @param   {object}   evt  (Browser event)
+ * @return  {void}
+ */
 const scaleFilterUp = (evt) => {
   evt.preventDefault();
   scaleAllFiltersDown();
@@ -143,11 +154,12 @@ const scaleFilterUp = (evt) => {
   openFilterList(parentElt.childNodes[3], parentElt.childNodes[2].id);
 };
 
-/**Ouvrir la liste de filtres
-*  @param   {node}    elt : l'élément auquel la classe ouverte est ajoutée
-*  @param   {string}  buttonId : l'identifiant du bouton cliqué
-*  @return  {void}
-*/
+/**
+ * Ouvrir la liste de filtres
+ * @param   {node}    elt  l'élément auquel la classe ouverte est ajoutée
+ * @param   {string}  buttonId  l'identifiant du bouton cliqué
+ * @return  {void}
+ */
 const openFilterList = (elt, buttonId) => {
   closeAllFilterLists();
   elt.className += " open";
@@ -156,27 +168,30 @@ const openFilterList = (elt, buttonId) => {
   overlayElt.style.display = "block";
 };
 
-/**Réduire le filtre d'entrée
-* @return  {void}
-*/
+/**
+ * Réduire le filtre d'entrée
+ * @return  {void}
+ */
 const scaleAllFiltersDown = () => {
   const filtersElts = document.querySelectorAll(".filters-elt");
   filtersElts.forEach((elt) => elt.classList.remove("scaled"));
 };
 
-/**Ferme et réduit tous les filtres  
-*@return  {void}
-*/
+/**
+ * Ferme et réduit tous les filtres 
+ * @return  {void}
+ */
 const putFiltersToInitialState = () => {
   closeAllFilterLists();
   scaleAllFiltersDown();
 };
 
-/**Obtenir la liste des filtres actuellement affichés
-* @param   {string} type ing, app or ust
-* @returns {array}  tableau
-*/
-  const getVisibleFilters = (type) => {
+/**
+ * Obtenir la liste des filtres actuellement affichés
+ * @param   {string} type ing, app ou ust
+ * @returns {array} tableau
+ */
+const getVisibleFilters = (type) => {
   const listNodes = document.querySelectorAll(`#${type}-filter-list li a`);
   const listContentArray = Array.from(listNodes).map((elt) =>
     elt.textContent.toLowerCase()
@@ -184,18 +199,20 @@ const putFiltersToInitialState = () => {
   return listContentArray;
 };
 
-/**Effacer les éléments des filtres DOM
-* @returns {void}
-*/
+/**
+ * Effacer les éléments des filtres DOM
+ * @returns {void}
+ */
 const clearAllFilters = () => {
   ingFiltersListElt.innerHTML = "";
   appFiltersListElt.innerHTML = "";
   ustFiltersListElt.innerHTML = "";
 };
 
-/**Obtenir le nombre de filtres ajoutés(ing + app + ust)
-* @returns {number}
-*/
+/**
+ * Obtenir le nombre de filtres ajoutés(ing + app + ust)
+ * @returns {number}
+ */
 const getAllFiltersLength = () => {
   const fullTagArray = state.ingLabels
     .concat(state.appLabels)
@@ -203,18 +220,20 @@ const getAllFiltersLength = () => {
   return fullTagArray.length;
 };
 
-/**Effacer la valeur dans les entrées des filtres
-* @returns {void}
-*/
+/**
+ * Effacer la valeur dans les entrées des filtres
+ * @returns {void}
+ */
 const removeFilterInputsValue = () => {
   ingInputElt.value = "";
   appInputElt.value = "";
   ustInputElt.value = "";
 };
 
-/**Complétion automatique lors de la saisie des entrées du filtre
-*@returns {void}
-*/
+/**
+ * Complétion automatique lors de la saisie des entrées du filtre
+ * @returns {void}
+ */
 const manageCompletion = (evt) => {
   const idTarget = evt.target.parentNode.id;
   const formattedValue = normalizeText(evt.target.value);
@@ -227,9 +246,10 @@ const manageCompletion = (evt) => {
   });
 };
 
-/**Afficher tous les tags dans le DOM
-*@returns {void}
-*/
+/**
+ * Afficher tous les tags dans le DOM
+ * @returns {void}
+ */
 const resetTagsDisplay = () => {
   const allIngTags = document.querySelectorAll(`#ing-filter-list li`);
   const allAppTags = document.querySelectorAll(`#app-filter-list li`);
