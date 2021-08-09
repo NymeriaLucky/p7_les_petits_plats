@@ -1,3 +1,7 @@
+
+import "core-js/stable";
+import "regenerator-runtime/runtime";//ajoutés pour completer webpack
+
 import data from "./data";
 import state from "./state";
 import {

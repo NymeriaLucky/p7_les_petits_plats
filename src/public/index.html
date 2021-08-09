@@ -16,6 +16,8 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"/>
+
+      <link href="../extra/main.css" rel="stylesheet">
     <title>Les petits plats</title>
   </head>
   <body>
@@ -24,7 +26,7 @@
     <header class="main-header">
       <img src="images/logo.png"alt="Les petits plats"width="512"height="178"/>
 
-      <form action="index.html" method="POST" class="search-form">
+      <form action="./index.html" method="POST" class="search-form">
         <input type="text" id="search-bar" class="search-bar" />
         <button type="submit" title="Rechercher" class="search-btn">
           <span class="fas fa-search"></span>
@@ -33,7 +35,7 @@
 
       <div class="labels" id="labels"></div>
 
-      <form action="index.html" method="POST" class="filters" id="filters">
+      <form action="./index.html" method="POST" class="filters" id="filters">
         <div class="filters-elt" id="filters-elt-ing">
           <input type="text" placeholder="Ingrédients" id="ing-input" />
           <span class="fas fa-chevron-down" id="ing-btn"></span>
@@ -65,5 +67,15 @@
 
     <!-- RESULT SENTENCE -->
     <p id="result" class="result"></p>
+
+    <script src="../extra/data.js"></script>
+    <script src="../extra/datalogic.js"></script>
+    <script src="../extra/fiters.js"></script>
+    <script src="../extra/index.js"></script>
+    <script src="../extra/labels.js"></script>
+    <script src="../extra/recipes.js"></script>
+    <script src="../extra/search.js"></script>
+    <script src="../extra/state.js"></script>
+    <script src="../extra/utils.js"></script>
   </body>
 </html>
