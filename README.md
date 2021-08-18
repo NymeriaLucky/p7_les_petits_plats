@@ -40,12 +40,20 @@ Développez Un algorythme de recherche avec JavaScript
 - HTML5
 - CSS(Sass, Bootstrap 4),
 - Javascript
+- fichiers minifiés
+
+# essai2
+ -node.js
+ 
 
 ### Environnement
 
-- Webpack
 - Bootstrap
 - JQuery
 - Popper
+- holder.js
 
 ## Tester
+Comparaison des deux algorythmes : 
+
+NB: unminify peut être utilisé pour visualiser les fichiers en clair et distinguer les algorythmes des fichiers compressés.

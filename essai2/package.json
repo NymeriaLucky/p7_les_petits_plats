@@ -1,0 +1,24 @@
+{
+  "name": "p7-les-petits-plats",
+  "version": "1.0.0",
+  "description": "- Node.js",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yagini/LionelCorre_P7_300421.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yagini/LionelCorre_P7_300421/issues"
+  },
+  "homepage": "https://github.com/Yagini/LionelCorre_P7_300421#readme",
+  "dependencies": {
+    "eslint": "^7.26.0",
+    "holderjs": "^2.9.9"
+  }
+}

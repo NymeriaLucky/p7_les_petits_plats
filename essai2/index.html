@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!--amélioration de compatibilité-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/all.css" />
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Les petits plats</title>
+  </head>
+  <body id="body">
+    <header class="header">
+      <a href="index.html" aria-label="Les petits plats" class="header__link">
+        <img src="./style/image/logo.png" alt="Les petits plats logo" class="header__logo" />
+      </a>
+    </header>
+
+    <form action="" method="POST" class="search" id="search__form">
+      <input
+        type="search"
+        class="search__input"
+        id="search"
+        name="Barre de recherche principale"
+        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+        aria-label="Search through site content"
+      />
+      <button type="submit" title="Rechercher" class="search__button" id="search__button">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
+    <div class="tag__list">            
+    </div>
+
+    <form action="" method="POST" class="filters" id="filters">
+      <div class="filters__element filters__element--ingredients" id="ingredients__element">
+        <input type="text" placeholder="Ingrédients" class="filters__input filters__input--ingredients" id="ingredients__input" />
+        <i class="fas fa-chevron-down filters__btn" id="ingredients__btn--down"></i>
+        <i class="fas fa-chevron-up filters__btn" id="ingredients__btn--up"></i>
+        <div class="filters__all" id="filters__all--ingredients">
+          <ul id="ingredients__filter-list"></ul>
+        </div>
+      </div>
+
+      <div class="filters__element filters__element--appliances" id="appliances__element">
+        <input type="text" placeholder="Appareils" class="filters__input filters__input--appliances" id="appliances__input" />
+        <i class="fas fa-chevron-down filters__btn" id="appliances__btn--down"></i>
+        <i class="fas fa-chevron-up filters__btn" id="appliances__btn--up"></i>
+        <div class="filters__all " id="filters__all--appliances">
+          <ul id="appliances__filter-list"></ul>
+        </div>
+      </div>
+
+      <div class="filters__element filters__element--ustensils" id="ustensils__element">
+        <input type="text" placeholder="Ustensiles" class="filters__input filters__input--ustensils" id="ustensils__input" />
+        <i class="fas fa-chevron-down filters__btn" id="ustensils__btn--down"></i>
+        <i class="fas fa-chevron-up filters__btn" id="ustensils__btn--up"></i>
+        <div class="filters__all" id="filters__all--ustensils">          
+          <ul id="ustensils__filter-list"></ul>
+        </div>
+      </div>
+    </form>
+
+    <main class="media__content" id="media__content">      
+      <!-- Contient tous les médias -->
+      
+    </main>
+    <p class="media__error" id="media__error">Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux pommes, "poisson", ect</p>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>

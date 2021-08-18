@@ -23,7 +23,7 @@ const getAllIngredients = () => {
 
 /**
  * Obtenir une liste de tous les appareils ménagers de toutes les recettes
- * @return  {array}    Liste des appareils
+ * @return  {array} Liste des appareils
  */
 const getAllAppliances = () => {
   let appliances = [];
@@ -39,7 +39,7 @@ const getAllAppliances = () => {
 
 /**
  * Obtenir une liste de tous les ustensils de cuisine de toutes les recettes
- * @return  {array}   Liste des ustensils
+ * @return  {array}  Liste des ustensils
  */
 const getAllUstensils = () => {
   let ustensils = [];
