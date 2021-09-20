@@ -124,7 +124,6 @@ const searchByTag = () => {
     });
   });
 };
-
 /**
  *Afficher les filtres des recettes affichées
  * @returns {void}
@@ -145,7 +144,6 @@ const displayRemainingTags = () => {
   clearAllFilters();
   recipesToConsider.forEach((recipe) => displayFiltersFromRecipes(recipe));
 };
-
 /**
  * Afficher les filtres d'ingrédients inclus dans les recettes affichées
  * @param   {object} recipe la recette ajoutée
@@ -156,7 +154,6 @@ const displayFiltersFromRecipes = (recipe) => {
   displayAppliancesFromRecipe(recipe);
   displayUstensilsFromRecipe(recipe);
 };
-
 /**
  *Afficher les filtres d'ingrédients inclus dans les recettes affichées
  * @param   {object} recipe la recette ajoutée
@@ -173,7 +170,6 @@ const displayIngredientsFromRecipe = (recipe) => {
       );
   });
 };
-
 /**
  * Afficher les filtres de l'appareil inclus dans les recettes affichées
  * @param   {object} recipe la recette ajoutée
@@ -188,7 +184,6 @@ const displayAppliancesFromRecipe = (recipe) => {
       createFilterElt("app", recipe.appliance.toLowerCase())
     );
 };
-
 /**
  * Afficher les filtres à ustensils inclus dans les recettes affichées
  * @param   {object} recipe la recette ajoutée
@@ -203,7 +198,6 @@ const displayUstensilsFromRecipe = (recipe) => {
       ustListElt.appendChild(createFilterElt("ust", ust.toLowerCase()));
   });
 };
-
 /**
  * Afficher "no result" le message d'erreur
  * @returns {void}

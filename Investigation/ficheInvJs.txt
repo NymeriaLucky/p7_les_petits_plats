@@ -73,6 +73,7 @@ labels.js : import state from "./state";
             
 recipes.js : import data from "./data";
              import { createGenericElt, createLinkElt } from "./utils";
+             
          fonctionnalités js:
               Déclaration de DOM variables(Elt)
               - Créer un modèle de recette unique
@@ -106,6 +107,7 @@ search.js : import data from "./data";
                   removeRecipeById,
                   createAllRecipes,
                    } from "./recipes";
+                   
      fonctionnalités js:
                - Gérer les conditions de recherche algo
                - Rechercher des recettes à partir de l'entrée de recherche
