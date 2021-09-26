@@ -1,11 +1,10 @@
-#  PROJET 7 Les petits plats
-
+#  PROJET 7 Les petits plats (projet antérieur au 15 septembre 2012)
 Développez Un algorythme de recherche avec JavaScript
 
 📃️Les petits plats est un site  web de recettes de cuisine à l'instar de marmiton ou 750g.
 
 ## Objectif
-👷️Construire un site web fonctionnel de recettes de cuisine en respectant le design des maquettes.
+👷️Construire un site web fonctionnel et performant, de recettes de cuisine en respectant le design des maquettes.
 
 🕵‍♀️️Développer un algorithme de recherche en JavaScript.
 
@@ -21,7 +20,7 @@ Développez Un algorythme de recherche avec JavaScript
 
 -☝️Deux versions d'algorithme différents (choisir la meilleure)
 
--☝️Créer une fiche d’investigation de fonctionnalité selon modèle (Document de comparaison)
+-☝️Créer une fiche d’investigation de fonctionnalité selon modèle (Document de   comparaison)
 
 -☝️Créer un schéma de l'enchaînement des étapes de chacun des algorithmes
 
@@ -33,8 +32,6 @@ Développez Un algorythme de recherche avec JavaScript
 
 -☝️Validation W3C sans erreur
 
-
-
 ### Technologies utilisées
 
 - HTML5
@@ -42,18 +39,28 @@ Développez Un algorythme de recherche avec JavaScript
 - Javascript
 - fichiers minifiés
 
-# essai2
- -node.js
- 
-
 ### Environnement
 
 - Bootstrap
 - JQuery
-- Popper
-- holder.js
+- node.js
+- Webpack 
+- Babel
+- Eslint
 
 ## Tester
 Comparaison des deux algorythmes : 
 
 NB: unminify peut être utilisé pour visualiser les fichiers en clair et distinguer les algorythmes des fichiers compressés.
+
+
+Pour Webpack :( bundler de modules statiques pour les applications JavaScript modernes)
+
+## Getting started
+`npm install`
+
+## Usage
+`dev: npm start`<br>
+`build: npm run webpack`
+
+Rappel : lien Github : https://github.com/NymeriaLucky/p7_les_petits_plats
