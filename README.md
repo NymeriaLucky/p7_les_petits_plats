@@ -1,4 +1,4 @@
-#  PROJET 7 Les petits plats (projet antérieur au 15 septembre 2012)
+# PROJET 7 Les petits plats (projet antérieur au 15 septembre 2012)
 Développez Un algorythme de recherche avec JavaScript
 
 📃️Les petits plats est un site  web de recettes de cuisine à l'instar de marmiton ou 750g.
